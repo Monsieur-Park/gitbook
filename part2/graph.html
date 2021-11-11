@@ -201,6 +201,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.4" data-path="graph.html">
+            
+                <a href="graph.html#bloom">
+            
+                    
+                    Bloom
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -284,10 +297,41 @@ then &#x201C;create a Local Graph&#x201D;. Write down the name of the graph, and
 <p>Now open the neo4j browser with the new graph you created.
 A bar at the top will appear and you&#x2019;ll type queries there</p>
 <p><img src="../pic/01-4-6.png" alt="browse graph"></p>
+<h1 id="connecting-to-a-remote-dbms-from-neo4j-desktop">Connecting to a Remote DBMS from Neo4j Desktop</h1>
+<p>To configure your Neo4j Desktop to connect to your GrapheneDB database instance, open the Project tab inside Neo4j Desktop, and select <strong>Add Graph</strong> &#x2192; <strong>Connect to remote Graph.</strong></p>
+<ol>
+<li>Add Graph.</li>
+</ol>
+<p><img src="../pic/e948898-addgraph.png" alt="add graph"></p>
+<ol>
+<li>Connect to remote Graph.</li>
+</ol>
+<p><img src="../pic/0071de1-connectremotegraph.png" alt="Connect graph"></p>
+<ol>
+<li>Supply Database Name and Connect (Bolt) URL.</li>
+</ol>
+<p><img src="../pic/4554a83-nameandbolt.png" alt="Supply Database"></p>
+<ol>
+<li><p>You can find the Bolt URL to your database by navigating to the connection tab of your admin panel inside GrapheneDB.</p>
+</li>
+<li><p>To connect your database user, please select username / password.</p>
+</li>
+</ol>
+<p><img src="../pic/a1ae3a6-username.png" alt="password"></p>
+<ol>
+<li>You must select the checkbox to Use encrypted connection, otherwise you will not be able to connect to the remote GDB database.</li>
+</ol>
+<p><img src="../pic/ef33e6c-encryption.png" alt="checkbox"></p>
 <h1 id="browser">Browser</h1>
 <p><strong>The Neo4j browser</strong> is a graphical user interface (GUI) that can be run through a browser.</p>
-<p>The Neo4j browser can be used for adding data, running queries, creating relationships, and more.
+<p>The Neo4j Browser is the easiest way to access Neo4j database.
+It requires a port and a bolt connection to access the database.</p>
+<p>The browser can be used for adding data, running queries, creating relationships, and more.
 It also provides an easy way to visualise the data in the database.</p>
+<ol>
+<li>The default port for Neo4j browser is : <a href="http://localhost:7474/browser/" target="_blank">http://localhost:7474/browser/</a></li>
+<li>The default bolt protocol for Neo4j browser is : bolt://localhost:7687</li>
+</ol>
 <p>Before we fall deep into modelling, let&#x2019;s mention and learn basics how to use database UI.
 Launch Browser will redirect you to screen below.</p>
 <p><img src="../pic/neo4j_browser.png" alt="browse graph"></p>
@@ -339,6 +383,39 @@ RETURN p,r,o</code></p>
 <p>Now we kind of understand how <strong>CYPHER</strong> works: either you create something new and start with <strong>CREATE</strong>, or
 you try to find existing things in the graph and you start with <strong>MATCH</strong>.
 Nodes are in brackets (), relationships in square brackets [], attributes in curly brackets {}</p>
+<h1 id="bloom">Bloom</h1>
+<p><strong>Bloom</strong> is a graph data visualisation and exploration tool. Rather than using Cypher to interrogate your data, Bloom allows you to use near-natural language to ask questions instead.</p>
+<p>Bloom is accessible via Neo4j Desktop. With this new version of Bloom, you will be able to explore data on a local Neo4j instance, as well as customising your perspective for your needs.</p>
+<p>You can customise Bloom by setting up the perspective.
+There are a number of things you can do to customise the perspective to your specific use-case:</p>
+<ul>
+<li><p>Colour-code labels and relationships &#x2014; As well as choosing colours for your node labels,
+you can now also select colours based on relationship types.</p>
+</li>
+<li><p>Use <strong>icons</strong> to help visually describe nodes rapidly &#x2014;
+Select the most appropriate image for your node categories from an extensive library of icons.</p>
+</li>
+</ul>
+<p><img src="../pic/bloom_install.png" alt="bloom_install"></p>
+<ul>
+<li>Pattern-based search</li>
+</ul>
+<p>These patterns should help quickly identify how to ask questions in the form of Bloom phrases.
+The following patterns we&#x2019;ll cover are:</p>
+<ul>
+<li>Specific path:</li>
+</ul>
+<p>We use this pattern when we want to retrieve all of the information from a specific start point.
+For example we may be asking a question from an anchor point.</p>
+<p><img src="../pic/bloom.png" alt="bloom"></p>
+<ul>
+<li>Shortest path:</li>
+</ul>
+<p>This pattern is very useful for starting to understand the shortest path between two nodes.</p>
+<ul>
+<li>Paths between nodes:</li>
+</ul>
+<p>This pattern is very useful for revealing potentially different paths of a certain pattern between set start an end points.</p>
 
                                 
                                 </section>
@@ -382,7 +459,7 @@ Nodes are in brackets (), relationships in square brackets [], attributes in cur
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"your first Graph","title":"Concept","level":"4.1","depth":1,"next":{"title":"Browser","level":"4.2","depth":1,"anchor":"#browser","path":"part2/graph.md","ref":"part2/graph.md#browser","articles":[]},"previous":{"title":"Install Neo4j","level":"3.1","depth":1,"anchor":"#install","path":"part1/install.md","ref":"part1/install.md#install","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/graph.md","mtime":"2021-10-06T23:29:37.895Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-06T23:57:14.390Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"your first Graph","title":"Concept","level":"4.1","depth":1,"next":{"title":"Browser","level":"4.2","depth":1,"anchor":"#browser","path":"part2/graph.md","ref":"part2/graph.md#browser","articles":[]},"previous":{"title":"Install Neo4j","level":"3.1","depth":1,"anchor":"#install","path":"part1/install.md","ref":"part1/install.md#install","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/graph.md","mtime":"2021-10-28T13:40:45.444Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-28T13:43:20.310Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
