@@ -15,6 +15,7 @@
 * [Concept](part2/graph.md#concept)
 * [Browser](part2/graph.md#browser)
 * [Cypher](part2/graph.md#cypher)
+* [Bloom](part2/graph.md#bloom)
 
 ## Neo4j in Digital Humanities
 * [Project](part3/dh.md#project)
